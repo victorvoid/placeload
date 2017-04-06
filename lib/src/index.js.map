@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/index.js"],"names":["console","log"],"mappings":";;AAAA;;;;;;AACAA,QAAQC,GAAR,CAAY,SAAZ","file":"index.js","sourcesContent":["import R from 'ramda';\nconsole.log('testing');\n"]}

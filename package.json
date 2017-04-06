@@ -4,13 +4,31 @@
   "description": "The best way to create a placeholder layout effect",
   "main": "lib/placeload.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint test src",
+    "clean": "rimraf lib && mkdir lib",
+    "prebuild": "npm run clean",
+    "build": "babel -d lib src/index.js -s",
+    "test": "babel-node test/index.js",
+    "check": "npm run -s lint && npm -s test && npm -s run lib",
+    "watch": "watch 'clear && npm run -s lint && npm -s test' src test"
   },
   "author": "Victor Igor",
   "license": "MIT",
   "dependencies": {
-    "es6-macros": "0.0.7",
-    "lambda-chop": "^0.1.5",
-    "sweet.js": "^2.2.1"
+    "ramda": "^0.23.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-eslint": "^5.0.0-beta4",
+    "babel-preset-es2015": "^6.1.18",
+    "doctoc": "0.15.0",
+    "eslint": "^1.10.2",
+    "rimraf": "^2.4.4",
+    "watch": "^0.16.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
   }
 }
